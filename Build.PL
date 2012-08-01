@@ -8,6 +8,7 @@ use Module::Build 0.3601;
 my %module_build_args = (
   "build_requires" => {
     "Module::Build" => "0.3601",
+    "Perinci::Examples" => "0.10",
     "Test::More" => "0.96"
   },
   "configure_requires" => {
@@ -18,13 +19,14 @@ my %module_build_args = (
     "Steven Haryanto <stevenharyanto\@gmail.com>"
   ],
   "dist_name" => "Perinci-Util",
-  "dist_version" => "0.01",
+  "dist_version" => "0.25",
   "license" => "perl",
   "module_name" => "Perinci::Util",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
     "Log::Any" => 0,
+    "Moo" => 0,
     "Rinci" => "1.1.1",
     "SHARYANTO::Package::Util" => 0,
     "perl" => "5.010000"

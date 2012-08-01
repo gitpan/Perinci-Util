@@ -7,8 +7,10 @@ META.json
 META.yml
 README
 dist.ini
-lib/Perinci/Access/InProcess/MetaAccessor.pm
+lib/Perinci/MetaAccessor/Default.pm
+lib/Perinci/Role/MetaAccessor.pm
 lib/Perinci/Util.pm
 t/00-compile.t
+t/get_package_meta_accessor.t
 t/release-pod-coverage.t
 t/release-pod-syntax.t

@@ -4,6 +4,7 @@ author:
   - 'Steven Haryanto <stevenharyanto@gmail.com>'
 build_requires:
   Module::Build: 0.3601
+  Perinci::Examples: 0.10
   Test::More: 0.96
 configure_requires:
   Module::Build: 0.3601
@@ -16,10 +17,11 @@ meta-spec:
 name: Perinci-Util
 requires:
   Log::Any: 0
+  Moo: 0
   Rinci: 1.1.1
   SHARYANTO::Package::Util: 0
   perl: 5.010000
 resources:
   homepage: http://metacpan.org/release/Perinci-Util
   repository: http://github.com/sharyanto/perl-Perinci-Util
-version: 0.01
+version: 0.25

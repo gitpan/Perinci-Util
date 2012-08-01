@@ -11,7 +11,7 @@ our @EXPORT_OK = qw(
                        get_package_meta_accessor
                );
 
-our $VERSION = '0.01'; # VERSION
+our $VERSION = '0.25'; # VERSION
 
 sub declare_property {
     my %args   = @_;
@@ -111,8 +111,7 @@ sub get_package_meta_accessor {
     my %args = @_;
 
     my $pkg = $args{package};
-    my $def = $args{default_class} //
-        'Perinci::Access::InProcess::MetaAccessor';
+    my $def = $args{default_class} // 'Perinci::MetaAccessor::Default';
 
     no strict 'refs';
     my $ma   = ${ "$pkg\::PERINCI_META_ACCESSOR" } // $def;
@@ -153,7 +152,7 @@ Perinci::Util - Utility routines
 
 =head1 VERSION
 
-version 0.01
+version 0.25
 
 =head1 DESCRIPTION
 
