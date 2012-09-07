@@ -3,7 +3,7 @@ package Perinci::Role::MetaAccessor;
 use 5.010;
 use Moo::Role;
 
-our $VERSION = '0.26'; # VERSION
+our $VERSION = '0.27'; # VERSION
 
 requires 'get_meta';
 requires 'get_all_metas';
@@ -21,7 +21,7 @@ Perinci::Role::MetaAccessor - Role for metadata accessor class
 
 =head1 VERSION
 
-version 0.26
+version 0.27
 
 =head1 AUTHOR
 

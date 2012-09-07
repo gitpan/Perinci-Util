@@ -4,7 +4,7 @@ use 5.010;
 use Moo;
 with 'Perinci::Role::MetaAccessor';
 
-our $VERSION = '0.26'; # VERSION
+our $VERSION = '0.27'; # VERSION
 
 # static method
 sub get_meta {
@@ -39,7 +39,7 @@ Perinci::MetaAccessor::Default - Default class to access metadata in local packa
 
 =head1 VERSION
 
-version 0.26
+version 0.27
 
 =head1 AUTHOR
 

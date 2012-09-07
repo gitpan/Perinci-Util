@@ -19,7 +19,7 @@ my %module_build_args = (
     "Steven Haryanto <stevenharyanto\@gmail.com>"
   ],
   "dist_name" => "Perinci-Util",
-  "dist_version" => "0.26",
+  "dist_version" => "0.27",
   "license" => "perl",
   "module_name" => "Perinci::Util",
   "recommends" => {},
@@ -27,7 +27,11 @@ my %module_build_args = (
   "requires" => {
     "Log::Any" => 0,
     "Moo" => 0,
-    "Rinci" => "1.1.1",
+    "Moo::Role" => 0,
+    "Perinci::Sub::DepChecker" => 0,
+    "Perinci::Sub::Wrapper" => 0,
+    "Rinci" => "v1.1.30",
+    "Rinci::Schema" => 0,
     "SHARYANTO::Package::Util" => 0,
     "perl" => "5.010000"
   },

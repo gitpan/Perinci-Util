@@ -18,10 +18,14 @@ name: Perinci-Util
 requires:
   Log::Any: 0
   Moo: 0
-  Rinci: 1.1.1
+  Moo::Role: 0
+  Perinci::Sub::DepChecker: 0
+  Perinci::Sub::Wrapper: 0
+  Rinci: v1.1.30
+  Rinci::Schema: 0
   SHARYANTO::Package::Util: 0
   perl: 5.010000
 resources:
   homepage: http://metacpan.org/release/Perinci-Util
   repository: http://github.com/sharyanto/perl-Perinci-Util
-version: 0.26
+version: 0.27

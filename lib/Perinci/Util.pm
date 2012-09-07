@@ -1,5 +1,10 @@
 package Perinci::Util;
 
+use 5.010;
+use strict;
+use warnings;
+use Log::Any '$log';
+
 use SHARYANTO::Package::Util qw(package_exists);
 
 require Exporter;
@@ -11,7 +16,7 @@ our @EXPORT_OK = qw(
                        get_package_meta_accessor
                );
 
-our $VERSION = '0.26'; # VERSION
+our $VERSION = '0.27'; # VERSION
 
 sub declare_property {
     my %args   = @_;
@@ -114,6 +119,7 @@ sub get_package_meta_accessor {
     my $def = $args{default_class} // 'Perinci::MetaAccessor::Default';
 
     no strict 'refs';
+    no warnings; # next line, the var only used once, thus warning
     my $ma   = ${ "$pkg\::PERINCI_META_ACCESSOR" } // $def;
     my $ma_p = $ma;
     $ma_p  =~ s!::!/!g;
@@ -152,11 +158,26 @@ Perinci::Util - Utility routines
 
 =head1 VERSION
 
-version 0.26
+version 0.27
 
 =head1 DESCRIPTION
 
 This is a temporary module containing utility routines.
+
+It should be split once it's rather big.
+
+=head1 FUNCTIONS
+
+=head2 declare_property
+
+=head2 declare_function_dep
+
+=head2 declare_function_feature
+
+=head2 get_package_meta_accessor(%args)
+
+Arguments: C<package>, C<default_class> (optional, defaults to
+C<Perinci::MetaAccessor::Default>).
 
 =head1 SEE ALSO
 
