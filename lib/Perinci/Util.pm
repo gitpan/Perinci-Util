@@ -16,7 +16,7 @@ our @EXPORT_OK = qw(
                        get_package_meta_accessor
                );
 
-our $VERSION = '0.29'; # VERSION
+our $VERSION = '0.30'; # VERSION
 
 sub declare_property {
     my %args   = @_;
@@ -158,7 +158,7 @@ Perinci::Util - Utility routines
 
 =head1 VERSION
 
-version 0.29
+version 0.30
 
 =head1 DESCRIPTION
 
