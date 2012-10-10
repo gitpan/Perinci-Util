@@ -4,13 +4,14 @@ use 5.010;
 use Moo;
 with 'Perinci::Role::MetaAccessor';
 
-our $VERSION = '0.30'; # VERSION
+our $VERSION = '0.31'; # VERSION
 
 # static method
 sub get_meta {
     my ($class, $package, $leaf) = @_;
     my $key = $leaf || ':package';
     no strict 'refs';
+    no warnings;
     ${ $package . "::SPEC" }{$key};
 }
 
@@ -39,7 +40,7 @@ Perinci::MetaAccessor::Default - Default class to access metadata in local packa
 
 =head1 VERSION
 
-version 0.30
+version 0.31
 
 =head1 AUTHOR
 

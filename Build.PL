@@ -14,12 +14,12 @@ my %module_build_args = (
   "configure_requires" => {
     "Module::Build" => "0.3601"
   },
-  "dist_abstract" => "Utility routines",
+  "dist_abstract" => "Perinci utility routines",
   "dist_author" => [
     "Steven Haryanto <stevenharyanto\@gmail.com>"
   ],
   "dist_name" => "Perinci-Util",
-  "dist_version" => "0.30",
+  "dist_version" => "0.31",
   "license" => "perl",
   "module_name" => "Perinci::Util",
   "recommends" => {},
@@ -33,6 +33,7 @@ my %module_build_args = (
     "Rinci" => "v1.1.30",
     "Rinci::Schema" => 0,
     "SHARYANTO::Package::Util" => 0,
+    "UUID::Random" => 0,
     "perl" => "5.010000"
   },
   "script_files" => []

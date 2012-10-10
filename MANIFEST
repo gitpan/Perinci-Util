@@ -10,9 +10,11 @@ dist.ini
 lib/Perinci/MetaAccessor/Default.pm
 lib/Perinci/Role/MetaAccessor.pm
 lib/Perinci/Sub/Util.pm
+lib/Perinci/Tx/Util.pm
 lib/Perinci/Util.pm
 t/00-compile.t
 t/get_package_meta_accessor.t
 t/release-pod-coverage.t
 t/release-pod-syntax.t
 t/sub_util-wrapres.t
+t/tx_util.t

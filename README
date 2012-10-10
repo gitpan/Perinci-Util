@@ -1,8 +1,8 @@
 NAME
-    Perinci::Util - Utility routines
+    Perinci::Util - Perinci utility routines
 
 VERSION
-    version 0.30
+    version 0.31
 
 DESCRIPTION
     This is a temporary module containing utility routines.
