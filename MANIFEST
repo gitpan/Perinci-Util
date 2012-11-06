@@ -16,5 +16,7 @@ t/00-compile.t
 t/get_package_meta_accessor.t
 t/release-pod-coverage.t
 t/release-pod-syntax.t
+t/release-rinci.t
+t/sub_util-caller.t
 t/sub_util-wrapres.t
 t/tx_util.t

@@ -24,6 +24,11 @@
             "Module::Build" : "0.3601"
          }
       },
+      "develop" : {
+         "requires" : {
+            "Test::Rinci" : "0.01"
+         }
+      },
       "runtime" : {
          "requires" : {
             "Log::Any" : "0",
@@ -52,6 +57,6 @@
          "url" : "http://github.com/sharyanto/perl-Perinci-Util"
       }
    },
-   "version" : "0.31"
+   "version" : "0.32"
 }
 

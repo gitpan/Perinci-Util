@@ -8,9 +8,10 @@ require Exporter;
 our @ISA = qw(Exporter);
 our @EXPORT_OK = qw(
                        wrapres
+                       caller
                );
 
-our $VERSION = '0.31'; # VERSION
+our $VERSION = '0.32'; # VERSION
 
 sub wrapres {
     my ($ores, $ires) = @_;
@@ -47,6 +48,30 @@ sub wrapres {
     $ores;
 }
 
+sub caller {
+    my $n0 = shift;
+    my $n  = $n0 // 0;
+
+    my $pkg = $Perinci::Sub::Wrapper::default_wrapped_package //
+        'Perinci::Sub::Wrapped';
+
+    my @r;
+    my $i =  0;
+    my $j = -1;
+    while ($i <= $n+1) { # +1 for this sub itself
+        $j++;
+        @r = CORE::caller($j);
+        last unless @r;
+        if ($r[0] eq $pkg && $r[1] =~ /^\(eval /) {
+            next;
+        }
+        $i++;
+    }
+
+    return unless @r;
+    return defined($n0) ? @r : $r[0];
+}
+
 1;
 # ABSTRACT: Helper when writing functions
 
@@ -60,15 +85,17 @@ Perinci::Sub::Util - Helper when writing functions
 
 =head1 VERSION
 
-version 0.31
+version 0.32
 
 =head1 SYNOPSIS
 
- use Perinci::Sub::Util qw(wrapres);
+ use Perinci::Sub::Util qw(wrapres caller);
 
  sub foo {
      my %args = @_;
      my $res;
+
+     my $caller = caller();
 
      $res = bar(); # call another function
      return wrapres([500, "Can't bar: "], $res) unless $res->[0] == 200;
@@ -79,6 +106,12 @@ version 0.31
  }
 
 =head1 FUNCTIONS
+
+=head2 caller([ $n ])
+
+Just like Perl's builtin caller(), except that this one will ignore wrapper code
+in the call stack. You should use this if your code is potentially wrapped. See
+L<Perinci::Sub::Wrapper> for more details.
 
 =head2 wrapres([$status, $msg, $result, $meta], $res) => ARRAY
 
