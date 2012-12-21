@@ -13,7 +13,7 @@ our @EXPORT_OK = qw(
                        use_other_actions
                );
 
-our $VERSION = '0.32'; # VERSION
+our $VERSION = '0.33'; # VERSION
 
 sub use_other_actions {
     my %args = @_;
@@ -87,7 +87,7 @@ Perinci::Tx::Util - Helper when writing transactional functions
 
 =head1 VERSION
 
-version 0.32
+version 0.33
 
 =head1 SYNOPSIS
 

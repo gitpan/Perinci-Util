@@ -4,7 +4,7 @@
       "Steven Haryanto <stevenharyanto@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300015, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Dist::Zilla version 4.300006, CPAN::Meta::Converter version 2.113640",
    "license" : [
       "perl_5"
    ],
@@ -31,15 +31,12 @@
       },
       "runtime" : {
          "requires" : {
-            "Log::Any" : "0",
-            "Moo" : "0",
-            "Moo::Role" : "0",
-            "Perinci::Sub::DepChecker" : "0",
-            "Perinci::Sub::Wrapper" : "0",
-            "Rinci" : "v1.1.30",
-            "Rinci::Schema" : "0",
-            "SHARYANTO::Package::Util" : "0",
-            "UUID::Random" : "0",
+            "Log::Any" : 0,
+            "Moo" : 0,
+            "Moo::Role" : 0,
+            "Rinci" : "v1.1.33",
+            "SHARYANTO::Package::Util" : 0,
+            "UUID::Random" : 0,
             "perl" : "5.010000"
          }
       },
@@ -57,6 +54,6 @@
          "url" : "http://github.com/sharyanto/perl-Perinci-Util"
       }
    },
-   "version" : "0.32"
+   "version" : "0.33"
 }
 

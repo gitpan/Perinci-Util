@@ -11,7 +11,7 @@ our @EXPORT_OK = qw(
                        caller
                );
 
-our $VERSION = '0.32'; # VERSION
+our $VERSION = '0.33'; # VERSION
 
 sub wrapres {
     my ($ores, $ires) = @_;
@@ -85,7 +85,7 @@ Perinci::Sub::Util - Helper when writing functions
 
 =head1 VERSION
 
-version 0.32
+version 0.33
 
 =head1 SYNOPSIS
 
