@@ -1,6 +1,6 @@
 package Perinci::Util;
 
-use 5.010;
+use 5.010001;
 use strict;
 use warnings;
 use Log::Any '$log';
@@ -13,7 +13,7 @@ our @EXPORT_OK = qw(
                        get_package_meta_accessor
                );
 
-our $VERSION = '0.33'; # VERSION
+our $VERSION = '0.34'; # VERSION
 
 sub get_package_meta_accessor {
     my %args = @_;
@@ -24,26 +24,18 @@ sub get_package_meta_accessor {
     no strict 'refs';
     no warnings; # next line, the var only used once, thus warning
     my $ma   = ${ "$pkg\::PERINCI_META_ACCESSOR" } // $def;
-    my $ma_p = $ma;
-    $ma_p  =~ s!::!/!g;
-    $ma_p .= ".pm";
-    eval { require $ma_p };
-    my $req_err = $@;
-    if ($req_err) {
+    if (!ref($ma)) {
+        # if we get a class name and it's not loaded yet, try to require it
         if (!package_exists($ma)) {
-            return [500, "Can't load meta accessor module $ma (probably ".
-                        "mistyped or missing module): $req_err"];
-        } elsif ($req_err !~ m!Can't locate!) {
-            return [500, "Can't load meta accessor module $ma (probably ".
-                        "compile error): $req_err"];
+            my $ma_p = $ma;
+            $ma_p  =~ s!::!/!g;
+            $ma_p .= ".pm";
+            eval { require $ma_p };
+            my $req_err = $@;
+            if ($req_err) {
+                return [500, "Can't load meta accessor module: $req_err"];
+            }
         }
-        # require error of "Can't locate ..." can be ignored. it
-        # might mean package is already defined by other code. we'll
-        # try and access it anyway.
-    } elsif (!package_exists($ma)) {
-        # shouldn't happen
-        return [500, "Meta accessor module loaded OK, but no $ma package ".
-                    "found, something's wrong"];
     }
     [200, "OK", $ma];
 }
@@ -51,8 +43,8 @@ sub get_package_meta_accessor {
 1;
 # ABSTRACT: Perinci utility routines
 
-
 __END__
+
 =pod
 
 =head1 NAME
@@ -61,7 +53,7 @@ Perinci::Util - Perinci utility routines
 
 =head1 VERSION
 
-version 0.33
+version 0.34
 
 =head1 DESCRIPTION
 
@@ -86,10 +78,9 @@ Steven Haryanto <stevenharyanto@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Steven Haryanto.
+This software is copyright (c) 2013 by Steven Haryanto.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
