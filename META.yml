@@ -16,14 +16,10 @@ meta-spec:
   version: 1.4
 name: Perinci-Util
 requires:
-  Log::Any: 0
-  Moo: 0
-  Moo::Role: 0
   Rinci: v1.1.33
-  SHARYANTO::Package::Util: 0
   UUID::Random: 0
   perl: 5.010001
 resources:
   homepage: http://metacpan.org/release/Perinci-Util
   repository: http://github.com/sharyanto/perl-Perinci-Util
-version: 0.34
+version: 0.35

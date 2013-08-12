@@ -17,17 +17,13 @@ my %module_build_args = (
     "Steven Haryanto <stevenharyanto\@gmail.com>"
   ],
   "dist_name" => "Perinci-Util",
-  "dist_version" => "0.34",
+  "dist_version" => "0.35",
   "license" => "perl",
   "module_name" => "Perinci::Util",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
-    "Log::Any" => 0,
-    "Moo" => 0,
-    "Moo::Role" => 0,
     "Rinci" => "v1.1.33",
-    "SHARYANTO::Package::Util" => 0,
     "UUID::Random" => 0,
     "perl" => "5.010001"
   },

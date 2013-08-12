@@ -2,7 +2,7 @@ NAME
     Perinci::Util - Perinci utility routines
 
 VERSION
-    version 0.34
+    version 0.35
 
 DESCRIPTION
     This is a temporary module containing utility routines.
@@ -10,10 +10,6 @@ DESCRIPTION
     It should be split once it's rather big.
 
 FUNCTIONS
-  get_package_meta_accessor(%args)
-    Arguments: "package", "default_class" (optional, defaults to
-    "Perinci::MetaAccessor::Default").
-
 SEE ALSO
     Perinci
 
