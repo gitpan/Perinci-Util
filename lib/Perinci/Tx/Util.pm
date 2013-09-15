@@ -4,7 +4,7 @@ use 5.010;
 use strict;
 use warnings;
 
-use Perinci::Sub::Util qw(wrapres);
+use Perinci::Sub::Util qw(err);
 use UUID::Random;
 
 require Exporter;
@@ -13,7 +13,7 @@ our @EXPORT_OK = qw(
                        use_other_actions
                );
 
-our $VERSION = '0.35'; # VERSION
+our $VERSION = '0.36'; # VERSION
 
 sub use_other_actions {
     my %args = @_;
@@ -61,9 +61,9 @@ sub use_other_actions {
     }
 
     if ($has_error) {
-        wrapres([500, "There is an error: action #$i: "], $res);
+        err(500, "There is an error: action #$i: ", $res);
     } elsif ($has_unfixable) {
-        wrapres([412, "There is an unfixable state: action #$i: "], $res);
+        err(412, "There is an unfixable state: action #$i: ", $res);
     } elsif ($has_fixable) {
         [200, "Some action needs to be done", undef, {
             do_actions => \@do,
@@ -87,7 +87,7 @@ Perinci::Tx::Util - Helper when writing transactional functions
 
 =head1 VERSION
 
-version 0.35
+version 0.36
 
 =head1 SYNOPSIS
 
